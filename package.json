@@ -40,10 +40,6 @@
     "prepack": "npm test",
     "test:ptc": "node --test test/ptc.integration.mjs"
   },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
-  },
   "devDependencies": {
     "@deepseek-ai/dsh-tools": "0.2.2-rc.1",
     "@deepseek-ai/dsh-system-prompt": "0.2.2-rc.1",
@@ -60,5 +56,13 @@
     "@deepseek-ai/dsh-sandbox-policy": "0.2.2-rc.1",
     "@deepseek-ai/dsh-fs-local": "0.2.2-rc.1",
     "@deepseek-ai/dsh-subprocess-local": "0.2.2-rc.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AutumnPizazz/dsh-skill-tools.git"
+  },
+  "homepage": "https://github.com/AutumnPizazz/dsh-skill-tools#readme",
+  "bugs": {
+    "url": "https://github.com/AutumnPizazz/dsh-skill-tools/issues"
   }
 }
