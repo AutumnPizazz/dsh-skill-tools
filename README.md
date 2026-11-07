@@ -6,12 +6,19 @@
 
 要求 Node.js >=24.9.0；支持的框架版本为 dsh 0.2.2-rc.1。
 
+在选定目录克隆仓库：
+
 ```bash
-git clone https://github.com/AutumnPizazz/dsh-skill-tools.git "$HOME/git_program/dsh-skill-tools"
-npm install --prefix "$HOME/.dsh" --omit=dev "$HOME/git_program/dsh-skill-tools"
+git clone https://github.com/AutumnPizazz/dsh-skill-tools.git
 ```
 
-已有源码时执行第二条命令。本地目录安装使用符号链接，安装后保留源码目录。
+进入仓库根目录执行安装，以下以用户级 profile `~/.dsh` 为例：
+
+```bash
+npm install --prefix "$HOME/.dsh" --omit=dev "$PWD"
+```
+
+本地目录安装使用符号链接，安装后保留源码目录。
 
 在当前 dsh profile 的 `cordis.patch.yml` 中追加：
 
