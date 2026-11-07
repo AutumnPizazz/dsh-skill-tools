@@ -1,0 +1,4 @@
+- insert:
+    - id: skill-tools
+      name: dsh-skill-tools
+      config: {}

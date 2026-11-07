@@ -12,24 +12,15 @@
 git clone https://github.com/AutumnPizazz/dsh-skill-tools.git
 ```
 
-进入仓库根目录执行安装，以下以用户级 profile `~/.dsh` 为例：
+进入仓库根目录，通过 dsh 的插件命令安装到目标 profile。以下以 `web` 为例：
 
 ```bash
-npm install --prefix "$HOME/.dsh" --omit=dev "$PWD"
+dsh plugin --profile web add --ignore-scripts "link:$PWD"
 ```
 
-本地目录安装使用符号链接，安装后保留源码目录。
+本地源码通过软链接安装，安装后保留源码目录。该命令登记 profile 依赖并启用插件 bundle；重新启动该 profile 后，可在插件管理页的“已安装插件”中查看 `skill-tools` 并切换启用状态。
 
-在当前 dsh profile 的 `cordis.patch.yml` 中追加：
-
-```yaml
-- insert:
-    - id: skill-tools
-      name: dsh-skill-tools
-      config: {}
-```
-
-在宿主根上下文挂载一次。每个工具名保持唯一；若其他插件注册了同名工具，先停用对应条目。切换配置前关闭 dsh，保存后重新启动。
+bundle 自动注册插件入口。每个工具名保持唯一；若其他插件注册了同名工具，先停用对应条目。切换配置前关闭 dsh，保存后重新启动。
 
 ## 预设与生命周期
 
@@ -103,4 +94,4 @@ npm pack --dry-run
 
 `DSH_SKILL_TEST_DIR=/path/to/skills npm test` 额外验证 46 条真实技能查询。PTC 进程集成需要可用的本地 sandbox 后端。测试范围与结果见 [验证记录](docs/verification.md)。
 
-`npm pack` 的本地 tgz 归档包含六个运行模块、README、LICENSE 和 package.json。GitHub 仓库另含测试和开发文档。
+`npm pack` 的本地 tgz 归档包含六个运行模块、bundle 配置、显示信息、README、LICENSE 和 package.json。GitHub 仓库另含测试和开发文档。

@@ -8,7 +8,9 @@
     ".": "./index.mjs",
     "./catalog": "./catalog.mjs",
     "./search": "./search.mjs",
-    "./package.json": "./package.json"
+    "./package.json": "./package.json",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./locale/*.json": "./locale/*.json"
   },
   "bin": {
     "dsh-skill-tools": "./cli.mjs"
@@ -21,7 +23,9 @@
     "providers.mjs",
     "cli.mjs",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "cordis.patch.yml",
+    "locale"
   ],
   "engines": {
     "node": ">=24.9.0"
@@ -55,7 +59,9 @@
     "@deepseek-ai/dsh-sandbox-local": "0.2.2-rc.1",
     "@deepseek-ai/dsh-sandbox-policy": "0.2.2-rc.1",
     "@deepseek-ai/dsh-fs-local": "0.2.2-rc.1",
-    "@deepseek-ai/dsh-subprocess-local": "0.2.2-rc.1"
+    "@deepseek-ai/dsh-subprocess-local": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-app-boot": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-plugin-manager": "0.2.2-rc.1"
   },
   "repository": {
     "type": "git",
@@ -64,5 +70,10 @@
   "homepage": "https://github.com/AutumnPizazz/dsh-skill-tools#readme",
   "bugs": {
     "url": "https://github.com/AutumnPizazz/dsh-skill-tools/issues"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
   }
 }
