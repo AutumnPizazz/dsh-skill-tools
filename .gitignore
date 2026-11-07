@@ -1,0 +1,8 @@
+node_modules/
+.plan/
+.npmrc
+.env
+.env.*
+*.tgz
+coverage/
+.cache/

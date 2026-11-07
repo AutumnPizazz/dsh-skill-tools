@@ -1,0 +1,64 @@
+{
+  "name": "dsh-skill-tools",
+  "version": "0.1.0",
+  "description": "On-demand skill search and loading for every dsh agent preset.",
+  "type": "module",
+  "main": "./index.mjs",
+  "exports": {
+    ".": "./index.mjs",
+    "./catalog": "./catalog.mjs",
+    "./search": "./search.mjs",
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "dsh-skill-tools": "./cli.mjs"
+  },
+  "files": [
+    "index.mjs",
+    "catalog.mjs",
+    "search.mjs",
+    "presets.mjs",
+    "providers.mjs",
+    "cli.mjs",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=24.9.0"
+  },
+  "license": "MIT",
+  "keywords": [
+    "dsh",
+    "cordis",
+    "skills",
+    "plugin",
+    "skill-search"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "test:unit": "node --test test/plugin.test.mjs test/presets.test.mjs test/providers.test.mjs",
+    "prepack": "npm test",
+    "test:ptc": "node --test test/ptc.integration.mjs"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "devDependencies": {
+    "@deepseek-ai/dsh-tools": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-system-prompt": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-skill": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-scope": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-tool-executor-native": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-tool-executor-ptc": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-tool-skill": "0.2.2-rc.1",
+    "@deepseek-ai/cordis": "4.1.0",
+    "@deepseek-ai/dsh-ptc-runtime-node": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-fs": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-subprocess": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-sandbox-local": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-sandbox-policy": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-fs-local": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-subprocess-local": "0.2.2-rc.1"
+  }
+}
